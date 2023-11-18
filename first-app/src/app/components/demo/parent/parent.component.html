@@ -1,6 +1,7 @@
 <p>parent works!</p>
 
-<app-child
-  [company]="companyName"
-  (childEvent)="onChildEvent($event)"
-></app-child>
+<app-child [company]="companyName" (childEvent)="onChildEvent($event)">
+  <header>Header info</header>
+  <main>Main Section</main>
+  <footer>Footer</footer>
+</app-child>

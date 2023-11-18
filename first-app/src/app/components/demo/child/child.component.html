@@ -1,6 +1,12 @@
+<ng-content select="header"></ng-content>
 <p>child works!</p>
 <p>Company Name in Child : {{ company }}</p>
+
+<ng-content></ng-content>
 
 <input type="text" [(ngModel)]="value" />
 
 <button class="btn btn-primary" (click)="onSend()">Send</button>
+
+<!-- Project the parent data -->
+<ng-content select="footer"></ng-content>
