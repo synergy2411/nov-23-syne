@@ -119,3 +119,16 @@ class DemoService{}
 # Bootstrap Installation
 
 - npm install bootstrap
+
+# Component Types
+
+- Smart / Container / Parent : does have UI logic and works on model
+- Dump / Presentational / Child : does not have UI logic / does not own the model; receive the model from the parent component.
+
+# Web Designing Terminologies
+
+- Atom : smallest unit; one button, one input field etc
+- Molecule : combo of atom; e.g Search bar contains input element + button
+- Organism : combo of molecules; e.g Navigation Bar => various links + Search Bar
+- Template : combo of Organism; e.g A Form
+- Page : A Complete Page
