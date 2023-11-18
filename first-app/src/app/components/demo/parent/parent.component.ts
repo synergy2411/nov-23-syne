@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
   companyName = 'Synechron';
+
+  onChildEvent(childValue: string) {
+    console.log('Child Value : ', childValue);
+  }
 }

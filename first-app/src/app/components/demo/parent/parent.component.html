@@ -1,3 +1,6 @@
 <p>parent works!</p>
 
-<app-child [company]="companyName"></app-child>
+<app-child
+  [company]="companyName"
+  (childEvent)="onChildEvent($event)"
+></app-child>
