@@ -115,3 +115,7 @@ class DemoService{}
 - ng g s path/serviceName
 - ng g m path/moduleName
 - ng g p path/pipeName
+
+# Bootstrap Installation
+
+- npm install bootstrap
