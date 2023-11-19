@@ -1,0 +1,26 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 1">Show Comments</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 2">Add New</a>
+  </li>
+</ul>
+
+<section class="container">
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="1">
+      <blockquote
+        *ngFor="let comment of comments"
+        class="d-flex justify-content-between"
+      >
+        <strong>Stars : {{ comment.stars }}</strong>
+        {{ comment.body }}
+        <cite class="float-right">- {{ comment.author }}</cite>
+      </blockquote>
+    </div>
+    <div *ngSwitchCase="2">
+      <h5>Form coming soon...</h5>
+    </div>
+  </div>
+</section>

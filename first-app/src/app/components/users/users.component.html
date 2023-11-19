@@ -4,15 +4,25 @@
       class="list-group-item mb-4"
       *ngFor="let user of users; first as isFirst"
     >
-      <div class="row" [ngClass]="{ 'my-shadow': isFirst }">
-        <div class="col-4 text-center">
-          <app-user-img
-            [user]="user"
-            (childEvent)="onMoreInfo($event)"
-          ></app-user-img>
+      <div [ngClass]="{ 'my-shadow': isFirst }">
+        <div class="row">
+          <div class="col-4 text-center">
+            <app-user-img
+              [user]="user"
+              (childEvent)="onMoreInfo($event)"
+            ></app-user-img>
+          </div>
+          <div class="col-8">
+            <app-user-info [user]="user"></app-user-info>
+          </div>
         </div>
-        <div class="col-8">
-          <app-user-info [user]="user"></app-user-info>
+
+        <br />
+
+        <div class="row">
+          <div class="col-12">
+            <app-comment [comments]="user.comments"></app-comment>
+          </div>
         </div>
       </div>
     </li>
