@@ -9,6 +9,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class ParentComponent {
   companyName = 'Synechron';
 
+  toggle = true;
+
   onChildEvent(childValue: string) {
     console.log('Child Value : ', childValue);
   }

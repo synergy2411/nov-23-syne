@@ -11,7 +11,7 @@ import {
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
   // encapsulation: ViewEncapsulation.Emulated,
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ChildComponent {
   @Input() company: string;

@@ -2,6 +2,16 @@
 
 <p>This will be affected by Child component CSS rule</p>
 
+<hr />
+
+<button class="btn btn-danger" (click)="toggle = !toggle">Toggle</button>
+
+<input type="text" [(ngModel)]="companyName" />
+
+<app-life-cycle *ngIf="toggle" [company]="companyName"></app-life-cycle>
+
+<hr />
+
 <app-child [company]="companyName" (childEvent)="onChildEvent($event)">
   <header>Header info</header>
   <main>Main Section</main>

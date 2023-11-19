@@ -8,6 +8,7 @@ import { ParentComponent } from './components/demo/parent/parent.component';
 import { ChildComponent } from './components/demo/child/child.component';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
+import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserInfoComponent } from './components/users/user-info/user-info.compon
     ChildComponent,
     UserImgComponent,
     UserInfoComponent,
+    LifeCycleComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
