@@ -12,6 +12,8 @@ export class PipeDemoComponent implements OnInit {
     createdAt: new Date('Dec 20, 2022'),
   };
 
+  contactNumber = 987654321;
+
   promiseObj = new Promise((resolve, reject) => {
     setTimeout(() => resolve('Data arrive in application'), 2000);
   });

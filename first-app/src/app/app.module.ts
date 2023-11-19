@@ -13,6 +13,8 @@ import { DirectiveDemoComponent } from './components/demo/directive-demo/directi
 import { CommentComponent } from './components/users/comment/comment.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './components/demo/pipe-demo/pipe-demo.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { CountryCodePipe } from './pipes/country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { PipeDemoComponent } from './components/demo/pipe-demo/pipe-demo.compone
     CommentComponent,
     HighlightDirective,
     PipeDemoComponent,
+    ReversePipe,
+    CountryCodePipe,
   ],
   imports: [
     // Modules - Built-in | Custom Modules

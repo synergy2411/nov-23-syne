@@ -1,6 +1,6 @@
 <h1>The Pipe Demo Component</h1>
 
-<p>Title : {{ expense.title | titlecase | uppercase }}</p>
+<p>Title : {{ expense.title | titlecase | reverse }}</p>
 <p>Amount : {{ expense.amount | currency : "INR" }}</p>
 <p>Created At : {{ expense.createdAt | date : "dd-MM-yyyy" }}</p>
 
@@ -11,3 +11,5 @@
 <p>Number : {{ expense.amount | number : "3.1-4" | currency }}</p>
 
 <p>Promise Data : {{ promiseObj | async }}</p>
+
+<p>Contact Number : {{ contactNumber | countryCode }}</p>
