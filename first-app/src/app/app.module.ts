@@ -15,6 +15,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './components/demo/pipe-demo/pipe-demo.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { CountryCodePipe } from './pipes/country-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
     PipeDemoComponent,
     ReversePipe,
     CountryCodePipe,
+    FilterPipe,
   ],
   imports: [
     // Modules - Built-in | Custom Modules

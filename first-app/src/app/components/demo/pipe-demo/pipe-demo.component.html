@@ -1,5 +1,35 @@
 <h1>The Pipe Demo Component</h1>
 
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-6">
+      <div class="d-grid">
+        <button class="btn btn-secondary" (click)="onAddNew()">Add New</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <select class="form-control" [(ngModel)]="filteredStatus">
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+  </div>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let todo of todoCollection | filter : filteredStatus"
+    >
+      <p>
+        {{ todo.label | titlecase }}
+        <span class="badge bg-primary float-end">
+          {{ todo.status }}
+        </span>
+      </p>
+    </li>
+  </ul>
+</div>
+<hr />
+
 <p>Title : {{ expense.title | titlecase | reverse }}</p>
 <p>Amount : {{ expense.amount | currency : "INR" }}</p>
 <p>Created At : {{ expense.createdAt | date : "dd-MM-yyyy" }}</p>
