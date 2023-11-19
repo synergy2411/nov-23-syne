@@ -153,3 +153,5 @@ class DemoService{}
 - @Output
 - @ViewChild
 - @ContentChild
+- @HostBinding
+- @HostListener
