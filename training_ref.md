@@ -155,3 +155,23 @@ class DemoService{}
 - @ContentChild
 - @HostBinding
 - @HostListener
+
+# Pure Pipe -> works with pure changes (default)
+
+# Impure Pipe -> works with both pure & impure changes. Not efficient for large record set.
+
+let fruits = ['apple', 'banana', 'kiwi'];
+
+fruits.push('orange'); // Impure Change
+
+fruits = ['apple' ,'banana', 'kiwi', 'orange']; // Pure Change
+
+let user = {
+name : "John"
+}
+
+user.name = "Jenny"; // Impure Change
+
+user = { // Pure Change
+name : "Jack"
+}

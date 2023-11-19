@@ -7,9 +7,11 @@ interface ITodo {
 
 @Pipe({
   name: 'filter',
+  // pure: false,
 })
 export class FilterPipe implements PipeTransform {
   transform(todoCollection: ITodo[], filteredStatus: string): ITodo[] {
+    console.log('[TRANSFER]');
     if (filteredStatus === '') {
       return todoCollection;
     }
