@@ -5,11 +5,14 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
   SimpleChanges,
+  ViewChild,
+  ContentChild,
 } from '@angular/core';
 
 @Component({
@@ -30,6 +33,10 @@ export class LifeCycleComponent
 {
   @Input() company: string;
 
+  @ViewChild('content') paragraphEl: ElementRef;
+
+  @ContentChild('heading') headingRef: ElementRef;
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges', changes);
   }
@@ -37,13 +44,14 @@ export class LifeCycleComponent
     console.log('ngDoCheck');
   }
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit');
+    // console.log('ngAfterContentInit', this.paragraphEl.nativeElement);
+    console.log('ngAfterContentInit', this.headingRef.nativeElement);
   }
   ngAfterContentChecked(): void {
     console.log('ngAfterContentChecked');
   }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
+    console.log('ngAfterViewInit', this.paragraphEl.nativeElement);
   }
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked');
@@ -52,6 +60,6 @@ export class LifeCycleComponent
     console.log('ngOnDestroy');
   }
   ngOnInit(): void {
-    console.log('ngOnInit');
+    console.log('ngOnInit', this.headingRef.nativeElement);
   }
 }

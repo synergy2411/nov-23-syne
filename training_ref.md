@@ -141,3 +141,15 @@ class DemoService{}
 > : Emulated : (default) Local CSS rules will override the global CSS rules
 > : ShadowDOM - Only local CSS rules will apply. Global CSS rules does not affect at all.
 > : None - No encapsulation. Local CSS rule will affect the other component UI also.
+
+# Notes
+
+- Projected Content and UI is not accessible inside ngOnInt().
+
+# Decorators
+
+- @Component
+- @Input
+- @Output
+- @ViewChild
+- @ContentChild
