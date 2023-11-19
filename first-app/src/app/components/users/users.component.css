@@ -2,3 +2,7 @@ img {
   max-width: 150px;
   height: auto;
 }
+
+.my-shadow {
+  box-shadow: 0 1px 15px rgba(105, 0, 0, 0.5);
+}

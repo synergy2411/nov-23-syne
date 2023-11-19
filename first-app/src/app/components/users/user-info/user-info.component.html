@@ -2,7 +2,13 @@
 
 <p>Date of Birth : <span [innerText]="user.dob"></span></p>
 
-<p>Income : <span [innerText]="user.income"></span></p>
+<p *ngIf="user.isWorking; else notWorking">
+  Income : <span [innerText]="user.income"></span>
+</p>
+
+<ng-template #notWorking>
+  <p>Mr. {{ user.lastName }} is not working anymore!</p>
+</ng-template>
 
 <p>
   Total Votes : {{ user.votes }}

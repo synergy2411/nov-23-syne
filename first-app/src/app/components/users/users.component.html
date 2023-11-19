@@ -1,7 +1,10 @@
 <div class="container">
   <ul class="list-group">
-    <li class="list-group-item">
-      <div class="row">
+    <li
+      class="list-group-item mb-4"
+      *ngFor="let user of users; first as isFirst"
+    >
+      <div class="row" [ngClass]="{ 'my-shadow': isFirst }">
         <div class="col-4 text-center">
           <app-user-img
             [user]="user"
