@@ -9,6 +9,7 @@ import { ChildComponent } from './components/demo/child/child.component';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.component';
+import { DirectiveDemoComponent } from './components/demo/directive-demo/directive-demo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.comp
     UserImgComponent,
     UserInfoComponent,
     LifeCycleComponent,
+    DirectiveDemoComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
