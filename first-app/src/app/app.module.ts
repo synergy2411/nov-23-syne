@@ -12,6 +12,7 @@ import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.comp
 import { DirectiveDemoComponent } from './components/demo/directive-demo/directive-demo.component';
 import { CommentComponent } from './components/users/comment/comment.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeDemoComponent } from './components/demo/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     DirectiveDemoComponent,
     CommentComponent,
     HighlightDirective,
+    PipeDemoComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
