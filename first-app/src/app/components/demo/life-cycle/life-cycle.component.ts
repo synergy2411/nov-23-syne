@@ -33,9 +33,13 @@ export class LifeCycleComponent
 {
   @Input() company: string;
 
-  @ViewChild('content') paragraphEl: ElementRef;
+  @ViewChild('content') paragraphEl: ElementRef<HTMLParagraphElement>;
 
-  @ContentChild('heading') headingRef: ElementRef;
+  @ContentChild('heading') headingRef: ElementRef<HTMLHeadingElement>;
+
+  constructor() {
+    console.log('constructor');
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges', changes);
@@ -45,7 +49,8 @@ export class LifeCycleComponent
   }
   ngAfterContentInit(): void {
     // console.log('ngAfterContentInit', this.paragraphEl.nativeElement);
-    console.log('ngAfterContentInit', this.headingRef.nativeElement);
+    // console.log('ngAfterContentInit', this.headingRef.nativeElement);
+    console.log('ngAfterContentInit');
   }
   ngAfterContentChecked(): void {
     console.log('ngAfterContentChecked');
