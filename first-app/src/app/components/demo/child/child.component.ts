@@ -1,9 +1,17 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  Input,
+  EventEmitter,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
+  // encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ChildComponent {
   @Input() company: string;

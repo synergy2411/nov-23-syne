@@ -68,7 +68,7 @@ class DemoService{}
   > Form Validation
   > Animation
   > Single Page Apps
-  > AoT Compiler - Tree-shaking, faster app bootstraping
+  > AoT Compiler - Tree-shaking, faster app bootstraping (kick-start)
 - ReactJS (30kb): Rendering the UI quickly and efficiently, react-router-dom, formik, yup, react-redux, axios, jQuery, fetch API
 - VueJS : Template oriented,
 - BackboneJS : MVC Pattern at client side
@@ -132,3 +132,12 @@ class DemoService{}
 - Organism : combo of molecules; e.g Navigation Bar => various links + Search Bar
 - Template : combo of Organism; e.g A Form
 - Page : A Complete Page
+
+# View Encapsulation
+
+> Component creates Shadow DOM
+> Stylesheet does not affect the other component UI.
+> Encapsulation Properties
+> : Emulated : (default) Local CSS rules will override the global CSS rules
+> : ShadowDOM - Only local CSS rules will apply. Global CSS rules does not affect at all.
+> : None - No encapsulation. Local CSS rule will affect the other component UI also.
