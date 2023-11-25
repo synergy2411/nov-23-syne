@@ -3,7 +3,7 @@
     <!-- Stars -->
     <div class="form-group mb-3">
       <label for="stars">Stars:</label>
-      <select name="stars" class="form-control" ngModel>
+      <select name="stars" class="form-control" ngModel #stars="ngModel">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -31,7 +31,9 @@
           <p class="alert alert-danger">* Body is mandatory field</p>
         </div>
         <div *ngIf="body.errors['minlength']">
-          <p class="alert alert-danger">* must have at least 5 character</p>
+          <p class="alert alert-danger">
+            * Body must have at least 5 character
+          </p>
         </div>
       </div>
     </div>
@@ -46,7 +48,16 @@
         ngModel
         required
         email
+        #author="ngModel"
       />
+      <div *ngIf="author.touched && author.errors">
+        <p *ngIf="author.errors['required']" class="alert alert-danger">
+          *Author is mandatory field
+        </p>
+        <p *ngIf="author.errors['email']" class="alert alert-danger">
+          *Author must be in email format
+        </p>
+      </div>
     </div>
 
     <!-- buttons -->
