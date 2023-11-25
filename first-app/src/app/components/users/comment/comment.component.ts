@@ -14,4 +14,9 @@ export class CommentComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  addNewComment(comment: IComment) {
+    this.comments.push(comment);
+    this.tab = 1;
+  }
 }

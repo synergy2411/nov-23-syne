@@ -20,7 +20,9 @@
       </blockquote>
     </div>
     <div *ngSwitchCase="2">
-      <app-comment-form></app-comment-form>
+      <app-comment-form
+        (newCommentEvent)="addNewComment($event)"
+      ></app-comment-form>
     </div>
   </div>
 </section>

@@ -1,11 +1,13 @@
 import {
   AfterViewInit,
   Component,
-  ElementRef,
+  EventEmitter,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { IComment } from 'src/app/model/comment';
 
 @Component({
   selector: 'app-comment-form',
@@ -14,6 +16,8 @@ import { NgForm } from '@angular/forms';
 })
 export class CommentFormComponent implements OnInit, AfterViewInit {
   @ViewChild('commentForm') commentForm: NgForm;
+
+  @Output() newCommentEvent = new EventEmitter<IComment>();
 
   constructor() {}
 
@@ -26,6 +30,7 @@ export class CommentFormComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(commentForm: NgForm) {
-    console.log(commentForm);
+    let newComment = commentForm.value;
+    this.newCommentEvent.emit(newComment);
   }
 }
