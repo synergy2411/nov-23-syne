@@ -4,3 +4,10 @@
 .ng-touched.ng-valid[name="username"] {
   border-bottom: 3px green solid;
 }
+
+.ng-touched.ng-invalid[name="password"] {
+  border-bottom: 3px red solid;
+}
+.ng-touched.ng-valid[name="password"] {
+  border-bottom: 3px green solid;
+}
