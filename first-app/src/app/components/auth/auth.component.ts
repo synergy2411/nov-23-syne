@@ -6,6 +6,7 @@ import {
   FormGroup,
   ValidationErrors,
   Validators,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -14,28 +15,71 @@ import {
   styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent implements OnInit {
-  username = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-    AuthComponent.exclamationValidator,
-  ]);
-  cnfPassword = new FormControl('', AuthComponent.confirmPasswordValidator);
+  // username = new FormControl('', [Validators.required, Validators.email]);
+  // password = new FormControl('', [
+  //   Validators.required,
+  //   Validators.minLength(6),
+  //   AuthComponent.exclamationValidator,
+  // ]);
+  // cnfPassword = new FormControl('', AuthComponent.confirmPasswordValidator);
 
   authForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
+    // this.authForm = this.fb.group({
+    //   username: this.username,
+    //   password: this.password,
+    //   cnfPassword: this.cnfPassword,
+    // });
+
     this.authForm = this.fb.group({
-      username: this.username,
-      password: this.password,
-      cnfPassword: this.cnfPassword,
+      username: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          AuthComponent.exclamationValidator,
+        ],
+      ],
+      cnfPassword: ['', [AuthComponent.confirmPasswordValidator]],
+      languages: this.fb.array([]),
     });
+  }
+
+  get languages() {
+    return this.authForm.get('languages') as FormArray;
+  }
+
+  get username() {
+    return this.authForm.get('username') as FormControl;
+  }
+
+  get password() {
+    return this.authForm.get('password') as FormControl;
+  }
+
+  get cnfPassword() {
+    return this.authForm.get('cnfPassword') as FormControl;
   }
 
   ngOnInit(): void {}
 
   onLogin() {
     console.log(this.authForm);
+  }
+
+  addLanguage() {
+    this.languages.push(
+      this.fb.group({
+        name: '',
+        experience: '',
+      })
+    );
+  }
+
+  onDeleteLanguage(index: number) {
+    this.languages.removeAt(index);
   }
 
   static exclamationValidator(
@@ -46,7 +90,6 @@ export class AuthComponent implements OnInit {
   }
 
   static confirmPasswordValidator(control: AbstractControl) {
-    console.log(control);
     let isMatch = null;
     if (control.parent && control.parent.controls) {
       if (control.value === control.parent.controls['password'].value) {
