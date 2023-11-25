@@ -1,5 +1,6 @@
 <h1>Observable Demo Component</h1>
 
+<h2>Interval</h2>
 <button class="btn btn-primary" (click)="onIntervalSubscribe()">
   Interval Subs
 </button>
@@ -7,3 +8,23 @@
 <button class="btn btn-danger" (click)="onIntervalUnsubscribe()">
   Interval Unsubs
 </button>
+
+<!-- <p>Interval : {{ interval$ | async }}</p> -->
+<hr />
+
+<h2>Timer</h2>
+<button class="btn btn-primary" (click)="onTimerSubsribe()">Timer Subs</button>
+
+<p>Async Pipe : {{ timer$ | async }}</p>
+
+<hr />
+
+<button class="btn btn-primary" (click)="onFromSubs()">From Subs</button>
+
+<p>FROM : {{ from$ | async }}</p>
+
+<hr />
+
+<h2>Custom Observable</h2>
+<button class="btn btn-primary" (click)="onCustomObsSubs()">Subscribe</button>
+<p>Custom Observable : {{ obs$ | async }}</p>

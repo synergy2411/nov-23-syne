@@ -238,3 +238,15 @@ name : "Jack"
 - Are cancelable / unsubscribeable
 - Are lazily executed (after subscription)
 - Support various powerful operators
+
+# Observer => next, error, complete
+
+# Observable => pipe, subscribe
+
+# Subject are both Observer as well as observable
+
+# Types of Subject
+
+- BehaviourSubject : starts with the seed / initial value
+- ReplaySubject : replays last emitted value
+- AsyncSubject (rarely used): emit only last value
