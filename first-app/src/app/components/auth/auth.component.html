@@ -17,6 +17,18 @@
               [formControl]="username"
             />
             <label for="username">Username:</label>
+
+            <div *ngIf="username.touched && username.invalid">
+              <p
+                *ngIf="username.hasError('required')"
+                class="alert alert-danger"
+              >
+                - Username is mandatory field
+              </p>
+              <p *ngIf="username.hasError('email')" class="alert alert-danger">
+                - Username should be in email format
+              </p>
+            </div>
           </div>
           <!-- password -->
           <div class="form-floating mb-3">
@@ -44,6 +56,8 @@
               </div>
             </div>
           </div>
+
+          <pre>Form Status : {{ authForm.status }}</pre>
         </form>
       </div>
     </div>
