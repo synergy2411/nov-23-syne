@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -17,6 +17,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './components/users/comment-form/comment-form.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,13 @@ import { CommentFormComponent } from './components/users/comment-form/comment-fo
     CountryCodePipe,
     FilterPipe,
     CommentFormComponent,
+    AuthComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [], // Services
   bootstrap: [AppComponent],
