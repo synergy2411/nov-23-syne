@@ -63,9 +63,33 @@
               </p>
             </div>
           </div>
+
+          <!-- Confirm Password -->
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="cnfPassword"
+              id="cnfPassword"
+              placeholder=""
+              [formControl]="cnfPassword"
+            />
+            <label for="cnfPassword">Confirm Password:</label>
+
+            <div *ngIf="cnfPassword.touched && cnfPassword.invalid">
+              <p
+                *ngIf="cnfPassword.hasError('cnfPasswordError')"
+                class="alert alert-danger"
+              >
+                - Password and Confirm Password does not match
+              </p>
+            </div>
+          </div>
+
           <!-- button -->
           <div class="row">
             <div class="col-6">
+              <!-- Login -->
               <div class="d-grid">
                 <button
                   class="btn btn-primary"
@@ -73,6 +97,18 @@
                   type="submit"
                 >
                   Login
+                </button>
+              </div>
+            </div>
+            <!-- Register -->
+            <div class="col-6">
+              <div class="d-grid">
+                <button
+                  class="btn btn-secondary"
+                  [disabled]="!authForm.valid"
+                  type="submit"
+                >
+                  Register
                 </button>
               </div>
             </div>

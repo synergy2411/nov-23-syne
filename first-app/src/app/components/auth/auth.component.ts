@@ -20,6 +20,7 @@ export class AuthComponent implements OnInit {
     Validators.minLength(6),
     AuthComponent.exclamationValidator,
   ]);
+  cnfPassword = new FormControl('', AuthComponent.confirmPasswordValidator);
 
   authForm: FormGroup;
 
@@ -27,6 +28,7 @@ export class AuthComponent implements OnInit {
     this.authForm = this.fb.group({
       username: this.username,
       password: this.password,
+      cnfPassword: this.cnfPassword,
     });
   }
 
@@ -41,5 +43,16 @@ export class AuthComponent implements OnInit {
   ): ValidationErrors | null {
     const hasExclamation = control.value.indexOf('!') >= 0;
     return hasExclamation ? null : { exclamation: true };
+  }
+
+  static confirmPasswordValidator(control: AbstractControl) {
+    console.log(control);
+    let isMatch = null;
+    if (control.parent && control.parent.controls) {
+      if (control.value === control.parent.controls['password'].value) {
+        isMatch = true;
+      }
+    }
+    return isMatch ? null : { cnfPasswordError: true };
   }
 }
