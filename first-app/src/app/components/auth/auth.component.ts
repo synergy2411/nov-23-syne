@@ -82,6 +82,10 @@ export class AuthComponent implements OnInit {
     this.languages.removeAt(index);
   }
 
+  onRegister() {
+    console.log(this.authForm);
+  }
+
   static exclamationValidator(
     control: AbstractControl
   ): ValidationErrors | null {
