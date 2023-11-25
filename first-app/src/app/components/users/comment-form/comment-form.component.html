@@ -23,10 +23,20 @@
         ngModel
         required
         minlength="5"
+        #body="ngModel"
       ></textarea>
+
+      <div *ngIf="body.touched && body.errors">
+        <div *ngIf="body.errors['required']">
+          <p class="alert alert-danger">* Body is mandatory field</p>
+        </div>
+        <div *ngIf="body.errors['minlength']">
+          <p class="alert alert-danger">* must have at least 5 character</p>
+        </div>
+      </div>
     </div>
 
-    <!-- author -->
+    <!-- author : mandatory & email -->
     <div class="form-group mb-3">
       <input
         type="email"
