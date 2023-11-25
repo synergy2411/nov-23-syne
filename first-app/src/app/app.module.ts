@@ -16,6 +16,7 @@ import { PipeDemoComponent } from './components/demo/pipe-demo/pipe-demo.compone
 import { ReversePipe } from './pipes/reverse.pipe';
 import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CommentFormComponent } from './components/users/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReversePipe,
     CountryCodePipe,
     FilterPipe,
+    CommentFormComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules

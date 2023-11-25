@@ -97,7 +97,7 @@ class DemoService{}
   > No for Routing
   > CSS Stylesheet
 - cd first-app
-- ng serve
+- ng serve : http://localhost:4200
 
 - npm uninstall @angular/cli -g
 - npm install @angular/cli@14 -g
@@ -119,6 +119,19 @@ class DemoService{}
 # Bootstrap Installation
 
 - npm install bootstrap
+
+# Data Binding -
+
+- Property Binding []
+- Event Binding ()
+- Two way data binding [(ngModel)]
+
+# Content Projection
+
+# Component Communication
+
+- Input()
+- Output() + EventEmitter
 
 # Component Types
 
@@ -175,3 +188,27 @@ user.name = "Jenny"; // Impure Change
 user = { // Pure Change
 name : "Jack"
 }
+
+---
+
+# Day 03
+
+- Forms
+
+  > Template Driven
+  > Reactive / Model / Data Driven
+
+- Services
+
+  > XHR Calls
+
+- RxJS Library
+  > Observables
+
+---
+
+# Form / Form Control Classes / States
+
+- ngValid / ngInvalid - whether the control satisfy the applied validation
+- ngPristine / ngDirty - whether the control having the initial state
+- ngTouched / ngUntouched - whether the control is touched and lost the focus
