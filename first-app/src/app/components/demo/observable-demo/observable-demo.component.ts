@@ -13,6 +13,7 @@ import {
   BehaviorSubject,
   ReplaySubject,
   AsyncSubject,
+  asyncScheduler,
 } from 'rxjs';
 
 @Component({
@@ -47,56 +48,49 @@ export class ObservableDemoComponent implements OnInit {
   ngOnInit(): void {
     // Subject
     // let subject = new Subject();
-
     // subject.subscribe((data) => console.log('Subs 1 :', data));
-
     // subject.next(101);
     // subject.next(102);
-
     // subject.subscribe((data) => console.log('Subs 2:', data));
-
     // subject.next(103);
     // subject.next(104);
-
     // BEHAVIOUR SUBJECT
     // let subject = new BehaviorSubject(100);
     // subject.subscribe((data) => console.log('Subs 1 :', data));
-
     // subject.next(101);
     // subject.next(102);
-
     // subject.subscribe((data) => console.log('Subs 2:', data));
-
     // subject.next(103);
     // subject.next(104);
-
     // REPLAY SUBJECT
     // let subject = new ReplaySubject(2);
     // subject.subscribe((data) => console.log('Subs 1 :', data));
-
     // subject.next(99);
     // subject.next(101);
     // subject.next(102);
-
     // subject.subscribe((data) => console.log('Subs 2:', data));
-
     // subject.next(103);
     // subject.next(104);
-
     // ASYNC SUBJECT
-    let subject = new AsyncSubject();
-    subject.subscribe((data) => console.log('Subs 1 :', data));
+    // let subject = new AsyncSubject();
+    // subject.subscribe((data) => console.log('Subs 1 :', data));
+    // subject.next(99);
+    // subject.next(101);
+    // subject.next(102);
+    // subject.subscribe((data) => console.log('Subs 2:', data));
+    // subject.next(103);
+    // subject.next(104);
+    // subject.complete();
+  }
 
-    subject.next(99);
-    subject.next(101);
-    subject.next(102);
+  doSomething() {
+    console.log('Doing something!');
+  }
 
-    subject.subscribe((data) => console.log('Subs 2:', data));
-
-    subject.next(103);
-    subject.next(104);
-
-    subject.complete();
+  onScheduleTask() {
+    console.log('Scheduler Start');
+    asyncScheduler.schedule(this.doSomething, 3000);
+    console.log('Schedule End');
   }
 
   onCustomObsSubs() {
