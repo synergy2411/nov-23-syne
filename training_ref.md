@@ -212,3 +212,29 @@ name : "Jack"
 - ngValid / ngInvalid - whether the control satisfy the applied validation
 - ngPristine / ngDirty - whether the control having the initial state
 - ngTouched / ngUntouched - whether the control is touched and lost the focus
+
+# Two Principles of Creating Service
+
+- Dependency Injection Principle
+- Single Responsibility Principle
+
+- Data inconsistency
+- Multiple models
+- UI Logic
+- Delegation of responsibility
+
+# Hierarchical Injection
+
+- Root Module : Singleton instance of the registered service will be available to all components and other services
+- Root Component : Singleton instance of the registered service will be available only in Components of app.
+- Other Components : Singleton instance of the registered service will be available only in self component and its child component.
+- If two services are registered at the same level, both will share the same singleton instance
+
+# Observable
+
+- Stream on which event occurs at different time interval
+- Asynchronous as well as synchronous
+- Keeps an eye on data source
+- Are cancelable / unsubscribeable
+- Are lazily executed (after subscription)
+- Support various powerful operators

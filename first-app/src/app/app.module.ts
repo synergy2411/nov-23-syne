@@ -18,6 +18,8 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './components/users/comment-form/comment-form.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { DataService } from './services/data.service';
+import { ObservableDemoComponent } from './components/demo/observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { AuthComponent } from './components/auth/auth.component';
     FilterPipe,
     CommentFormComponent,
     AuthComponent,
+    ObservableDemoComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
