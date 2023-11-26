@@ -29,6 +29,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { EagerModule } from './modules/eager/eager.module';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    EagerModule,
   ],
   providers: [
     {
