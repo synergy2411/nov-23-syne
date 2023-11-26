@@ -1,7 +1,10 @@
 <div class="container">
   <p class="display-4 text-center">My Todos</p>
+
   <div class="row">
     <div class="col-8 offset-2">
+      <app-new-todo (todoEvent)="addNewTodo($event)"></app-new-todo>
+      <br />
       <ul class="list-group">
         <li class="list-group-item mb-3" *ngFor="let todo of todoCollection">
           <p>{{ todo.label | uppercase }}</p>

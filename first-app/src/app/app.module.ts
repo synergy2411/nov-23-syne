@@ -22,6 +22,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/demo/observable-demo/observable-demo.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { NewTodoComponent } from './components/todos/new-todo/new-todo.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TodosComponent } from './components/todos/todos.component';
     AuthComponent,
     ObservableDemoComponent,
     TodosComponent,
+    NewTodoComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules

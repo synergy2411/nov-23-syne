@@ -17,4 +17,8 @@ export class TodosComponent implements OnInit {
       .fetchAllTodos()
       .subscribe((data: ITodo[]) => (this.todoCollection = data));
   }
+
+  addNewTodo(todo: ITodo) {
+    this.todoCollection.push(todo);
+  }
 }
