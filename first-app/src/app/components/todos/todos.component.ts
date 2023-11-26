@@ -13,6 +13,10 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
+    this.fetchTodos();
+  }
+
+  fetchTodos() {
     this.todoService
       .fetchAllTodos()
       .subscribe((data: ITodo[]) => (this.todoCollection = data));
@@ -20,5 +24,20 @@ export class TodosComponent implements OnInit {
 
   addNewTodo(todo: ITodo) {
     this.todoCollection.push(todo);
+  }
+
+  onDelete(todoId: string) {
+    this.todoService.deleteTodo(todoId).subscribe((data) => {
+      let position = this.todoCollection.findIndex(
+        (todo) => todo.id === todoId
+      );
+      this.todoCollection.splice(position, 1);
+
+      // this.todoCollection = this.todoCollection.filter(
+      //   (todo) => todo.id != todoId
+      // );
+
+      // this.fetchTodos();
+    });
   }
 }

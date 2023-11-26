@@ -7,7 +7,13 @@
       <br />
       <ul class="list-group">
         <li class="list-group-item mb-3" *ngFor="let todo of todoCollection">
-          <p>{{ todo.label | uppercase }}</p>
+          {{ todo.label | uppercase }}
+          <button
+            (click)="onDelete(todo.id)"
+            class="btn btn-outline-danger float-end btn-sm"
+          >
+            🗑️
+          </button>
         </li>
       </ul>
     </div>
