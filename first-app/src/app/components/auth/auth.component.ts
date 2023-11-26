@@ -8,6 +8,8 @@ import {
   Validators,
   FormArray,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -25,7 +27,11 @@ export class AuthComponent implements OnInit {
 
   authForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     // this.authForm = this.fb.group({
     //   username: this.username,
     //   password: this.password,
@@ -66,7 +72,16 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {}
 
   onLogin() {
-    console.log(this.authForm);
+    const { username, password } = this.authForm.value;
+    this.authService
+      .onLogin(username, password)
+      .subscribe((user: { isAuthenticated: boolean }) => {
+        if (user.isAuthenticated) {
+          this.router.navigate(['/todos']);
+        } else {
+          alert('Bad Credentials');
+        }
+      });
   }
 
   addLanguage() {

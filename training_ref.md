@@ -270,3 +270,5 @@ name : "Jack"
 - RouterModule : configure the routes with application
 - RouterLink : create links without reload the page
 - RouterOutlet : place to load the component template
+- Router : Injected for programmatic navigation
+- ActivatedRoute : Injected to access the current URL (Route / Query parameter)
