@@ -27,6 +27,11 @@ export const APP_ROUTES: Routes = [
     component: AuthComponent,
   },
   {
+    path: 'lazy',
+    loadChildren: () =>
+      import('./modules/lazy/lazy.module').then((m) => m.LazyModule),
+  },
+  {
     path: 'expenses',
     component: ExpensesComponent,
     children: [
