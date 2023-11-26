@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -23,6 +23,7 @@ import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/demo/observable-demo/observable-demo.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { NewTodoComponent } from './components/todos/new-todo/new-todo.component';
+import { LoggerInterceptor } from './services/interceptor/logger.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,13 @@ import { NewTodoComponent } from './components/todos/new-todo/new-todo.component
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [], // Services
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggerInterceptor,
+      multi: true,
+    },
+  ], // Services
   bootstrap: [AppComponent],
 })
 export class AppModule {}
