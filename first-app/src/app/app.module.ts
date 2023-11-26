@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -20,6 +21,7 @@ import { CommentFormComponent } from './components/users/comment-form/comment-fo
 import { AuthComponent } from './components/auth/auth.component';
 import { DataService } from './services/data.service';
 import { ObservableDemoComponent } from './components/demo/observable-demo/observable-demo.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +43,14 @@ import { ObservableDemoComponent } from './components/demo/observable-demo/obser
     CommentFormComponent,
     AuthComponent,
     ObservableDemoComponent,
+    TodosComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [], // Services
   bootstrap: [AppComponent],

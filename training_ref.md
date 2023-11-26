@@ -249,4 +249,12 @@ name : "Jack"
 
 - BehaviourSubject : starts with the seed / initial value
 - ReplaySubject : replays last emitted value
-- AsyncSubject (rarely used): emit only last value
+- AsyncSubject (rarely used): emit only last value after observable completes.
+
+---
+
+# Day 04
+
+- XHR Call using HttpClient
+- Creating SPA using Routing
+- Modules
