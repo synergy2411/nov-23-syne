@@ -272,3 +272,10 @@ name : "Jack"
 - RouterOutlet : place to load the component template
 - Router : Injected for programmatic navigation
 - ActivatedRoute : Injected to access the current URL (Route / Query parameter)
+
+# Generating the build and serve
+
+> ng build
+> npm install serve -g
+> cd dist/first-app
+> serve

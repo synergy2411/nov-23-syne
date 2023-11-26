@@ -73,6 +73,7 @@ export class AuthComponent implements OnInit {
 
   onLogin() {
     const { username, password } = this.authForm.value;
+    debugger;
     this.authService
       .onLogin(username, password)
       .subscribe((user: { isAuthenticated: boolean }) => {
