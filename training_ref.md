@@ -258,3 +258,15 @@ name : "Jack"
 - XHR Call using HttpClient
 - Creating SPA using Routing
 - Modules
+
+# Routing
+
+- Hashbang Mode : http://localhost:4200/#/pricing
+- HTML5 Mode (default) : http://localhost:4200/pricing
+
+# Routing Terminologies
+
+- Routes : Create application routes
+- RouterModule : configure the routes with application
+- RouterLink : create links without reload the page
+- RouterOutlet : place to load the component template
