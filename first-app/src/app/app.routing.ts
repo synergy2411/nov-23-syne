@@ -5,10 +5,16 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoginGuard } from './services/guards/login.guard';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const APP_ROUTES: Routes = [
   {
-    path: 'users',
+    path: '', // http://localhost:4200
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'users', // http://localhost:4200/users
     component: UsersComponent,
   },
   {
@@ -29,5 +35,9 @@ export const APP_ROUTES: Routes = [
         component: ExpenseItemComponent,
       },
     ],
+  },
+  {
+    path: '**', // does not match above specified paths
+    component: PageNotFoundComponent,
   },
 ];

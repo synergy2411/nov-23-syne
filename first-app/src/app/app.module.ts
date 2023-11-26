@@ -28,6 +28,7 @@ import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ExpenseItemComponent } from './components/expenses/expense-item/expense
     HeaderComponent,
     ExpensesComponent,
     ExpenseItemComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules
