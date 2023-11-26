@@ -14,6 +14,12 @@
     ></app-button>
 
     <script>
+      const btn = document.querySelector("app-button");
+
+      btn.addEventListener("action", function (event) {
+        alert("Who's this?");
+        console.log(event);
+      });
       function handleClick(event) {
         console.log(event);
       }

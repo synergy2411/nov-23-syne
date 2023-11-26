@@ -9,7 +9,10 @@ import {
 
 @Component({
   selector: 'app-button',
-  template: ` <button (click)="handleClick()">{{ label }}</button> `,
+  template: `
+    <h1>Click : {{ numberOfClick }}</h1>
+    <button (click)="handleClick()">{{ label }}</button>
+  `,
   styles: [
     `
       button {
