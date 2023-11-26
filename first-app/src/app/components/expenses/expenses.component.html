@@ -1,0 +1,22 @@
+<h1>My Expenses</h1>
+
+<div class="row mb-4">
+  <div
+    class="col-4"
+    *ngFor="let expense of expenses"
+    (click)="onItemSelected(expense)"
+  >
+    <div class="card clickable">
+      <div class="card-header">
+        <h5 class="text-center">{{ expense.title | uppercase }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <!-- child routing component -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

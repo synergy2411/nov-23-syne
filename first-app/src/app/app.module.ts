@@ -26,6 +26,8 @@ import { LoggerInterceptor } from './services/interceptor/logger.interceptor';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { HeaderComponent } from './components/header/header.component';
     TodosComponent,
     NewTodoComponent,
     HeaderComponent,
+    ExpensesComponent,
+    ExpenseItemComponent,
   ],
   imports: [
     // Modules - Built-in | Custom Modules

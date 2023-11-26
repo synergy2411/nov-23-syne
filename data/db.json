@@ -1,3 +1,23 @@
 {
-  "todos": []
+  "todos": [],
+  "expenses": [
+    {
+      "id": "e001",
+      "title": "grocery",
+      "amount": 199,
+      "createdAt": "Dec 21 , 2022"
+    },
+    {
+      "id": "e002",
+      "title": "shopping",
+      "amount": 699,
+      "createdAt": "Oct 30, 2023"
+    },
+    {
+      "id": "e003",
+      "title": "insurance",
+      "amount": 79,
+      "createdAt": "Nov 12, 2022"
+    }
+  ]
 }
