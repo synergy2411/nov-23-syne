@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IExpense } from 'src/app/model/expenses';
 import { ExpenseService } from 'src/app/services/expense.service';
 
@@ -11,9 +11,22 @@ import { ExpenseService } from 'src/app/services/expense.service';
 export class ExpensesComponent implements OnInit {
   expenses: IExpense[];
 
-  constructor(private expenseService: ExpenseService, private router: Router) {}
+  constructor(
+    private expenseService: ExpenseService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      if (params['deleted']) {
+        this.fetchExpenses();
+      }
+    });
+    this.fetchExpenses();
+  }
+
+  fetchExpenses() {
     this.expenseService
       .fetchAllExpenses()
       .subscribe((data: IExpense[]) => (this.expenses = data));

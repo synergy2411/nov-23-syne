@@ -16,4 +16,8 @@ export class ExpenseService {
   fetchExpense(id: string) {
     return this.http.get(`${this.baseUrl}/expenses/${id}`);
   }
+
+  deleteExpense(id: string) {
+    return this.http.delete(`${this.baseUrl}/expenses/${id}`);
+  }
 }

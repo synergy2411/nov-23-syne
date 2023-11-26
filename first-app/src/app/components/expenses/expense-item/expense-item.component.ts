@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IExpense } from 'src/app/model/expenses';
 import { ExpenseService } from 'src/app/services/expense.service';
 
@@ -15,7 +15,8 @@ export class ExpenseItemComponent implements OnInit {
 
   constructor(
     private expenseService: ExpenseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,5 +30,15 @@ export class ExpenseItemComponent implements OnInit {
     this.expenseService
       .fetchExpense(id)
       .subscribe((data: IExpense) => (this.expense = data));
+  }
+
+  onDelete() {
+    if (confirm(`Are you sure to delete this item - ${this.expenseId}?`)) {
+      this.expenseService.deleteExpense(this.expenseId).subscribe(() => {
+        this.router.navigate(['/expenses'], {
+          queryParams: { deleted: this.expenseId },
+        });
+      });
+    }
   }
 }
